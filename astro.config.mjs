@@ -9,6 +9,9 @@ export default defineConfig({
       title: 'Personal Docs',
       description: 'A collection of notes and docs for my personal use',
       lastUpdated: true,
+      editLink: {
+        baseUrl: 'https://github.com/alex289/personal-docs/edit/main/',
+      },
       social: {
         github: 'https://github.com/alex289/personal-docs',
       },
@@ -16,6 +19,10 @@ export default defineConfig({
         {
           label: 'About',
           link: '/about',
+        },
+        {
+          label: 'Git',
+          link: '/git',
         },
         {
           label: 'Server',
