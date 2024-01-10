@@ -1,11 +1,6 @@
 ---
 title: Nginx
-description: A guide in my new Starlight docs site.
+description: A popular web server and reverse proxy
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
-
-## Further reading
-
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+[Nginx](https://nginx.com) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.

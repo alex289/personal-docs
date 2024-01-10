@@ -8,8 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier -w . '!pnpm-lock.yaml'",
-    "lint": "eslint ."
+    "format": "prettier -w . '!pnpm-lock.yaml'"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",

@@ -1,11 +1,6 @@
 ---
 title: Crowdsec
-description: A reference page in my new Starlight docs site.
+description: Crowdsec is a lightweight software that detects and blocks malicious actors from accessing your systems.
 ---
 
-Reference pages are ideal for outlining how things work in terse and clear terms.
-Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what you're documenting.
-
-## Further reading
-
-- Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+The [CrowdSec Security Engine](https://github.com/crowdsecurity/crowdsec) is an open-source, lightweight software that detects and blocks malicious actors from accessing your systems at various levels, using log analysis and threat patterns called scenarios.
