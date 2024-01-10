@@ -7,25 +7,18 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Personal Docs',
+      lastUpdated: true,
       social: {
         github: 'https://github.com/alex289/personal-docs',
       },
       sidebar: [
         {
-          label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            {
-              label: 'Example Guide',
-              link: '/guides/example/',
-            },
-          ],
+          label: 'About',
+          link: '/about',
         },
         {
-          label: 'Reference',
-          autogenerate: {
-            directory: 'reference',
-          },
+          label: 'Server',
+          autogenerate: { directory: 'server' },
         },
       ],
     }),
