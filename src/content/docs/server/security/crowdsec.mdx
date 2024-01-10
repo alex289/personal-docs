@@ -1,0 +1,83 @@
+---
+title: Crowdsecurity
+description: Crowdsec is a lightweight software that detects and blocks malicious actors from accessing your systems.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+The [CrowdSec Security Engine](https://github.com/crowdsecurity/crowdsec) is an open-source, lightweight software that detects and blocks malicious actors from accessing your systems at various levels, using log analysis and threat patterns called scenarios.
+
+![Crowdsec architecture](https://docs.crowdsec.net/img/crowdsec_architecture.png)
+
+## Installation
+
+```bash
+curl -s https://packagecloud.io/install/repositories/crowdsec/crowdsec/script.deb.sh | sudo bash
+sudo apt-get update
+sudo apt-get install crowdsec
+```
+
+### Recommended collections, parsers and scenarios
+
+```bash
+cscli collections install crowdsecurity/linux
+cscli collections install crowdsecurity/whitelist-good-actors
+cscli collections install crowdsecurity/iptables
+cscli parsers install crowdsecurity/whitelists
+```
+
+<LinkCard
+  title="Official CrowdSec Documentation"
+  description="All the documentation you need to install and configure CrowdSec"
+  href="https://docs.crowdsec.net/docs/next/intro"
+/>
+
+### Bouncer
+
+CrowdSec itself is not a blocking solution, it's a detection engine. To block IPs, you need to install a bouncer. You can find a list of available bouncer [here](https://app.crowdsec.net/hub/bouncers). To install the firewall bouncer, run one of the following commands, depending on your firewall:
+
+```bash
+sudo apt install crowdsec-firewall-bouncer-iptables
+# or
+sudo apt install crowdsec-firewall-bouncer-nftables
+```
+
+### Support Docker
+
+If you are using Docker, you need to modify the bouncer configuration to block requests to Docker containers. Edit the file `/etc/crowdsec/bouncers/crowdsec-firewall-bouncer.yaml` and uncomment the line `FORWARD` in the `iptables_chains`.
+
+## Configuration
+
+To parse logs, you need to install a parser. You can find a list of available parsers [here](https://app.crowdsec.net/hub/collections). After that you need to configure the parser to parse the logs you want by editign the file `/etc/crowdsec/acquis.yaml`.
+
+### Example for nginx
+
+```bash
+cscli collections install crowdsecurity/nginx
+```
+
+```yaml
+# /etc/crowdsec/acquis.yaml
+---
+source: docker
+container_name:
+  - nginx
+labels:
+  type: nginx
+```
+
+### Create own ip whitelist
+
+You can create your own ip whitelist by creating the file `/etc/crowdsec/parsers/s02-enrich/mywhitelists.yaml`.
+
+```yaml
+name: crowdsecurity/whitelists
+description: 'Whitelist events from my ip addresses'
+whtielist:
+  reason: 'my ip ranges'
+  ip:
+    - '1.1.1.1'
+    - '10.0.0.0/8'
+    - '172.16.0.0/12'
+    - '192.168.0.0/16'
+```
