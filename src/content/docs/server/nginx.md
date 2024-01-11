@@ -32,7 +32,7 @@ services:
 
 In your nginx config directory create a `nginx.conf` file:
 
-```conf
+```nginx
 # nginx.conf
 worker_processes 1;
 
@@ -53,7 +53,7 @@ http {
 
 Now you can create multiple configurations in a new `conf.d` directory like this:
 
-```conf
+```nginx
 # your-comain.com.conf
 server {
     listen 80;
@@ -77,7 +77,7 @@ SSL requires a valid certificate. You can read how you can get one [here](/serve
 
 Edit your `your-comain.com.conf` like this:
 
-```conf
+```nginx
 # your-comain.com.conf
 server {
 listen 80;
