@@ -111,3 +111,7 @@ server_name your-comain.com.conf;
 }
 
 ```
+
+:::note
+When using multiple subdomains you can just create multiple `.conf` files.
+:::

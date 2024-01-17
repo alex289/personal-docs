@@ -36,6 +36,10 @@ acme.sh --issue --dns dns_ionos -d "your-domain.com" \
     --reloadcmd "docker restart nginx"
 ```
 
+:::note
+If you are using multiple subdomains you can just execute the commands multiple times with every sudomain.
+:::
+
 ### Deploying Certificates to Nginx
 
 ```bash
