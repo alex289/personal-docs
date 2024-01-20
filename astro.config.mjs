@@ -25,6 +25,14 @@ export default defineConfig({
           link: '/git',
         },
         {
+          label: 'Neovim',
+          link: '/neovim',
+        },
+        {
+          label: 'Tmux',
+          link: '/tmux',
+        },
+        {
           label: 'Server',
           items: [
             {
