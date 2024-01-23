@@ -62,3 +62,30 @@ sudo systemctl restart ssh
 :::danger
 Before closing your current terminal test your configuration in a new terminal to avoid getting locked out of your server!
 :::
+
+## SSH Login Notifications
+
+In this example a discord webhook with [discord.sh](https://github.com/fieu/discord.sh) is used but anything is possible.
+
+Add a script which contains the following:
+
+```bash
+# ssh_discord_notifications.sh
+#!/bin/bash
+if [ "${PAM_TYPE}" = "open_session" ]; then
+
+   /root/discord.sh --text "New SSH Login as *$PAM_USER* from **[$PAM_RHOST](https://ipinfo.io/$PAM_RHOST)**"
+
+fi
+```
+
+Dont forget to make it executable: `chmod +x ssh_discord_notifications.sh`
+
+Now add the following to the `/etc/pam.d/sshd` file:
+
+```bash
+# /etc/pam.d/sshd
+session optional pam_exec.so /root/script-location/ssh_discord_notifications.sh
+```
+
+Restart your ssh server and then this will now log the ip of a user when logging in with ssh.
