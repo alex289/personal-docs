@@ -44,10 +44,11 @@ For extra security you can also change the port of ssh and enable strict mode:
 ```bash
 ...
 Port 14832
-...
+LoginGraceTime 2m
 StrictModes yes
 MaxAuthTries 5
 MaxSessions 3
+PermitRootLogin no # Dont allow login with root!
 ...
 ```
 
