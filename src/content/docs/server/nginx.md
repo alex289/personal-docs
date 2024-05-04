@@ -11,8 +11,6 @@ Add the container
 
 ```yaml
 # docker-compose.yml
-version: '3.8'
-
 services:
   nginx:
     image: nginx:latest

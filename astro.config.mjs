@@ -40,6 +40,10 @@ export default defineConfig({
               link: '/server/nginx',
             },
             {
+              label: 'traefik',
+              link: '/server/traefik',
+            },
+            {
               label: 'acme.sh',
               link: '/server/acmesh',
             },

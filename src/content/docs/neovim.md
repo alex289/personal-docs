@@ -16,18 +16,14 @@ I use [AstroNvim](https://astronvim.com/) with some modifications which you can 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Clone AstroNvim
+#### Clone AstroNvim with my custom configuration
 
 ```shell
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-```
-
-#### Clone this configuration
-
-```
-git clone https://github.com/alex289/astronvim_config.git ~/.config/nvim/lua/user
+git clone https://github.com/alex289/astronvim_config ~/.config/nvim
 ```
 
 #### Start Neovim
@@ -53,4 +49,3 @@ Escape key: `jj, jk`
 Neotree toggle: `Space + e`
 
 Neotree focus: `Space + o`
-
