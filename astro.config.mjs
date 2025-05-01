@@ -12,9 +12,11 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/alex289/personal-docs/edit/main/',
       },
-      social: {
-        github: 'https://github.com/alex289/personal-docs',
-      },
+      social: [{
+        icon: "github",
+        label: "GitHub",
+        href: 'https://github.com/alex289/personal-docs',
+      }],
       sidebar: [
         {
           label: 'About',
